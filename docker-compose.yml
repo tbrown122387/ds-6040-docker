@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ubuntu_anaconda:
+    image: continuumio/anaconda3:latest
+    container_name: ubuntu_anaconda
+    environment:
+      - LANG=C.UTF-8
+    volumes:
+      - ./data:/data  # Add this line if you want to mount a local directory to the container
+    command: /bin/bash -c "/opt/conda/bin/conda install -y -c conda-forge pystan"
+
