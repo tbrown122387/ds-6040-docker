@@ -5,7 +5,10 @@ services:
     container_name: ubuntu_anaconda
     environment:
       - LANG=C.UTF-8
+      - JUPYTER_TOKEN=my_secret_token  # Set your desired token here
+    ports:
+      - "8888:8888"  # Expose Jupyter Lab port
     volumes:
       - ./data:/data  # Add this line if you want to mount a local directory to the container
-    command: /bin/bash -c "/opt/conda/bin/conda install -y -c conda-forge pystan"
+    command: /bin/bash -c "/opt/conda/bin/conda install -y -c conda-forge pystan && /opt/conda/bin/jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token=${JUPYTER_TOKEN}"
 

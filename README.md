@@ -12,18 +12,26 @@ git clone git@github.com:tbrown122387/ds-6040-docker.git
 
 ### 3. 
 
+
+After editing `my_secret_token` in the `docker_compose.yml` file, type
 ```
+
 docker-compose up
 ```
-
-### 4. Start Up Jupyter Lab
-
+or 
 ```
-docker exec -it ubuntu_anaconda jupyter lab --allow-root
+docker compose up
 ```
 
-Leave this terminal running, and click on the url. This will open Jupyter lab in a web browser. 
+You might need a `sudo` in front of either  of those depending on how you have Docker configured.
 
-TODO: right now this last step is prompting me for a password or token. Elegant wayto handlethis?
+
+### 4. Open Jupyter Lab
+
+
+If you keep that terminal running, Jupyter Lab should already be running. Open up a webbrowser, and navigate to `localhost:8888` and you're good to go.
+
+
+TODO other helpful docker commands.
 
 TODO: what is Docker Hub's role in all of this
