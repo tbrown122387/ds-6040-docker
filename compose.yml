@@ -1,0 +1,8 @@
+services:
+  jupyterlab:
+    image: tbrown122387/bayes_ml
+    ports:
+      - "8888:8888"  
+    volumes:
+      - ./:/bml24  
+      - ./settings.txt:/root/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
