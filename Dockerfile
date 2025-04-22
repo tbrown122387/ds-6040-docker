@@ -10,10 +10,6 @@ RUN pip install -r requirements.txt
 
 RUN apt-get update
 
-RUN install_cmdstan
-
-RUN ls -F ~/.cmdstan
-
 WORKDIR /bml24
 
 EXPOSE 8888
